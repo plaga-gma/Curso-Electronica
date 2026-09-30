@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Módulo 1 de un curso de electrónica explicado en 3D: el átomo, los electrones, la tabla periódica, conductores, aislantes y semiconductores.">
+<meta name="theme-color" content="#0a0f1c">
+<meta property="og:title" content="Taller de Electrones · Módulo 1">
+<meta property="og:description" content="Por qué el cobre conduce y la goma no, visto por dentro con simulaciones 3D.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a0f1c'/%3E%3Cellipse cx='32' cy='32' rx='24' ry='9' fill='none' stroke='%2356d8ff' stroke-width='3'/%3E%3Cellipse cx='32' cy='32' rx='9' ry='24' fill='none' stroke='%2356d8ff' stroke-width='3'/%3E%3Ccircle cx='32' cy='32' r='6' fill='%23ff5a6e'/%3E%3Ccircle cx='56' cy='32' r='4' fill='%23ffb454'/%3E%3C/svg%3E">
+<!--ARTIFACT-HEAD-->
+<title>Taller de Electrones</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="css/estilos.css">
+<!--/ARTIFACT-HEAD-->
+</head>
+<body>
+<!--ARTIFACT-BODY-->
+<div class="wrap">
+  <header class="top">
+    <div class="brand">
+      <div class="mark" aria-hidden="true"><i></i></div>
+      <div>
+        <h1>Taller de Electrones</h1>
+        <div class="sub">Curso de electrónica explicado en 3D</div>
+      </div>
+    </div>
+    <div class="modtag">
+      <span class="num">1</span>
+      <div><div class="k">Módulo 1</div><div class="n">La materia y la electricidad</div></div>
+    </div>
+  </header>
+
+  <nav class="tabs" aria-label="Lecciones del módulo 1">
+    <div class="tablist" role="tablist">
+      <button class="tab" role="tab" id="t-inicio" aria-controls="inicio" aria-selected="true">Inicio</button>
+      <button class="tab" role="tab" id="t-atomo" aria-controls="atomo" aria-selected="false"><b>1</b>El átomo</button>
+      <button class="tab" role="tab" id="t-tabla" aria-controls="tabla" aria-selected="false"><b>2</b>Tabla periódica</button>
+      <button class="tab" role="tab" id="t-materiales" aria-controls="materiales" aria-selected="false"><b>3</b>Conductores y aislantes</button>
+      <button class="tab" role="tab" id="t-bandas" aria-controls="bandas" aria-selected="false"><b>4</b>Bandas de energía</button>
+      <button class="tab" role="tab" id="t-vida" aria-controls="vida" aria-selected="false"><b>5</b>En la vida real</button>
+      <button class="tab" role="tab" id="t-resumen" aria-controls="resumen" aria-selected="false">Resumen y glosario</button>
+      <button class="tab" role="tab" id="t-prueba" aria-controls="prueba" aria-selected="false">Autoevaluación</button>
+    </div>
+  </nav>
+
+  <main>
+  <!-- ============ INICIO ============ -->
+  <section class="panel" id="inicio" role="tabpanel" aria-labelledby="t-inicio">
+    <header class="lhead">
+      <div class="eyebrow">Módulo 1 · La materia y la electricidad</div>
+      <h2>¿Por qué el cobre conduce y la goma no?</h2>
+      <p class="lead">En este módulo te vas a meter <strong>adentro de los materiales</strong> para entender qué es realmente la electricidad y por qué algunos la dejan pasar y otros no. Empezá por este viaje: desde un cable que ves a simple vista hasta el núcleo de un átomo.</p>
+    </header>
+    <div class="lab home-lab">
+      <div class="stage" id="stage-viaje">
+        <div class="otitle"><div class="nm">Viaje al interior de un cable</div><div class="sym" id="viaje-t" style="font-size:30px">Un cable de cobre</div></div>
+        <div class="scalebar"><div class="lbl" id="viaje-esc">≈ 1 mm</div><div class="bar"></div><div class="sub2" id="viaje-sub"></div></div>
+        <div class="hint">Arrastrá para girar · rueda o pellizco para zoom</div>
+      </div>
+      <aside class="side">
+        <div class="tour" id="tour-viaje"></div>
+        <div class="dock">
+          <div class="group-label">Cómo usar esta página</div>
+          <ul class="goals">
+            <li>Cada lección tiene una <strong>escena 3D</strong>: arrastrala para girarla y usá la rueda del mouse (o dos dedos) para acercarte.</li>
+            <li>Seguí el <strong>recorrido guiado</strong> con “Siguiente”: cada paso cambia la escena y te explica qué estás viendo.</li>
+            <li>Después <strong>explorá libre</strong> con los controles y leé “Para entenderlo a fondo”, debajo de cada escena.</li>
+            <li>Al final, comprobá lo que aprendiste en la <strong>autoevaluación</strong>.</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+
+    <div class="theory">
+      <div class="theory-head"><h3>Qué vas a entender al terminar</h3></div>
+      <div class="blk">
+        <ul class="goals">
+          <li>De qué está hecho un átomo y qué es la carga eléctrica.</li>
+          <li>Qué son los electrones de valencia y por qué deciden todo.</li>
+          <li>Cómo leer la tabla periódica para saber quién conduce.</li>
+        </ul>
+      </div>
+      <div class="blk">
+        <ul class="goals">
+          <li>Qué pasa adentro de un conductor, un aislante y un semiconductor.</li>
+          <li>Qué es realmente la corriente eléctrica y qué tan rápido va.</li>
+          <li>Dónde se usa cada tipo de material en un celular, un cable o un chip.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="sec-title">Las lecciones del módulo</h3>
+    <div class="roadmap">
+      <button class="rcard" type="button" data-go="atomo"><span class="k">Lección 1</span><span class="t">El átomo</span><span class="d">Núcleo, capas, electrones de valencia e iones.</span></button>
+      <button class="rcard" type="button" data-go="tabla"><span class="k">Lección 2</span><span class="t">La tabla periódica</span><span class="d">Los 118 elementos en 3D: quién conduce y por qué.</span></button>
+      <button class="rcard" type="button" data-go="materiales"><span class="k">Lección 3</span><span class="t">Conductores y aislantes</span><span class="d">El mar de electrones, los enlaces y los huecos.</span></button>
+      <button class="rcard" type="button" data-go="bandas"><span class="k">Lección 4</span><span class="t">Bandas de energía</span><span class="d">La explicación de fondo: la brecha que hay que saltar.</span></button>
+      <button class="rcard" type="button" data-go="vida"><span class="k">Lección 5</span><span class="t">En la vida real</span><span class="d">Resistividad real, usos en electrónica y errores comunes.</span></button>
+      <button class="rcard" type="button" data-go="prueba"><span class="k">Al final</span><span class="t">Autoevaluación</span><span class="d">14 preguntas con explicación y enlace para repasar.</span></button>
+    </div>
+
+    <h3 class="sec-title">El curso completo</h3>
+    <p class="sec-sub">Los temas siguientes del curso se van a sumar como módulos nuevos.</p>
+    <div class="course" id="proximos"></div>
+  </section>
+
+  <!-- ============ LECCIÓN 1: ÁTOMO ============ -->
+  <section class="panel" id="atomo" role="tabpanel" aria-labelledby="t-atomo" hidden>
+    <header class="lhead">
+      <div class="eyebrow">Lección 1 · El átomo</div>
+      <h2>Todo se decide en la última capa</h2>
+      <p class="lead">Para entender la electricidad hay que mirar el átomo por dentro. Vas a ver dónde está la carga positiva, dónde la negativa, y por qué un solo electrón (el de la última capa) define si un material conduce o no.</p>
+    </header>
+    <div class="lab">
+      <div class="stage" id="stage-atomo">
+        <div class="otitle"><div class="sym" id="at-sym">Cu</div><div class="nm" id="at-nm">Cobre · Z = 29</div></div>
+        <div class="legend">
+          <span><i class="dot" style="background:var(--plus)"></i>Protón (+)</span>
+          <span><i class="dot" style="background:#9aa7c7"></i>Neutrón (sin carga)</span>
+          <span><i class="dot" style="background:var(--e)"></i>Electrón interno (−)</span>
+          <span><i class="dot" style="background:var(--val)"></i>Electrón de valencia (−)</span>
+        </div>
+        <div class="hint">Arrastrá para girar · rueda o pellizco para zoom</div>
+      </div>
+      <aside class="side">
+        <div class="tour" id="tour-atomo"></div>
+        <div class="dock">
+          <div>
+            <div class="group-label">Explorá: elegí un elemento</div>
+            <div class="chips" id="el-chips"></div>
+          </div>
+          <label class="switch"><input type="checkbox" id="solo-val"> Resaltar los electrones de valencia</label>
+          <label class="switch"><input type="checkbox" id="escudo"> Mostrar el escudo de electrones internos</label>
+          <div class="row"><button class="btn small" type="button" id="btn-ion">Arrancarle un electrón de valencia</button></div>
+          <div class="info" id="at-info"></div>
+        </div>
+      </aside>
+    </div>
+
+    <div class="theory">
+      <div class="theory-head"><h3>Para entenderlo a fondo</h3><span>Leelo después del recorrido</span></div>
+      <div class="blk">
+        <h4>¿De qué está hecho un átomo?</h4>
+        <p>Todo lo que te rodea está formado por átomos, y cada átomo tiene solo tres tipos de partículas:</p>
+        <ul class="rules">
+          <li><span class="n" style="color:var(--plus)">+</span><span><strong>Protón</strong>: carga positiva. Vive en el núcleo.</span></li>
+          <li><span class="n" style="color:var(--muted)">0</span><span><strong>Neutrón</strong>: sin carga. También en el núcleo; ayuda a mantenerlo unido.</span></li>
+          <li><span class="n" style="color:var(--e)">−</span><span><strong>Electrón</strong>: carga negativa. Se mueve alrededor del núcleo, en capas.</span></li>
+        </ul>
+        <p>Un protón pesa unas <strong>1.836 veces</strong> más que un electrón. Por eso casi toda la masa está en el núcleo, y los electrones, livianísimos, son los que se pueden mover.</p>
+      </div>
+      <div class="blk">
+        <h4>La carga eléctrica</h4>
+        <p>La carga es una propiedad de las partículas, y funciona con una regla simple:</p>
+        <div class="formula">opuestas (+ y −) se atraen · iguales (+ y + / − y −) se repelen</div>
+        <p>El núcleo positivo atrae a los electrones negativos: eso mantiene unido al átomo. Y la fuerza es mayor <strong>cuanto más cerca</strong> están.</p>
+        <p>Un átomo normal tiene <strong>tantos electrones como protones</strong>: las cargas se compensan y el átomo es <strong>neutro</strong>. El cobre: +29 − 29 = 0.</p>
+      </div>
+      <div class="blk">
+        <h4>Las capas y cuántos electrones entran</h4>
+        <p>Los electrones no se ubican en cualquier lado: ocupan <strong>capas</strong> a distintas distancias del núcleo. Cada capa tiene lugares limitados:</p>
+        <div class="formula">capa 1: 2 · capa 2: 8 · capa 3: 18 · capa 4: 32</div>
+        <p>Se van llenando de adentro hacia afuera. El cobre, con 29 electrones, queda <strong>2 · 8 · 18 · 1</strong>: tres capas completas y <strong>un electrón solito</strong> en la cuarta.</p>
+      </div>
+      <div class="blk">
+        <h4>Los electrones de valencia</h4>
+        <p>Los de la <strong>última capa</strong> son los <strong>electrones de valencia</strong>. Son los que se unen con otros átomos y los que pueden soltarse. Su cantidad da una regla práctica:</p>
+        <ul class="rules">
+          <li><span class="n" style="color:var(--cu)">1 a 3</span><span>Los sueltan fácil → <strong>conductores</strong> (cobre, plata, oro, aluminio).</span></li>
+          <li><span class="n" style="color:var(--semi)">4</span><span>A medias → <strong>semiconductores</strong> (silicio, germanio).</span></li>
+          <li><span class="n" style="color:var(--ais)">5 a 8</span><span>Los retienen o quieren más → <strong>aislantes</strong>.</span></li>
+        </ul>
+        <p>Es una regla orientativa: también importa cómo se unen los átomos (por ejemplo, el hidrógeno tiene 1 y no conduce).</p>
+      </div>
+      <div class="blk">
+        <h4>¿Por qué ese electrón está tan flojo?</h4>
+        <p>Por dos motivos que se suman: está <strong>lejos</strong> del núcleo, y entre él y el núcleo hay <strong>28 electrones internos</strong> que, al ser negativos, lo repelen y “tapan” la atracción de los protones (efecto <strong>escudo</strong>).</p>
+        <div class="analogy"><b>Imaginalo así</b>Es como una persona en la última fila de un estadio lleno: está lejísimos del escenario y hay miles de personas en el medio. Casi no siente lo que pasa adelante, y se puede ir en cualquier momento.</div>
+      </div>
+      <div class="blk">
+        <h4>Iones: átomos con carga</h4>
+        <p>Si un átomo <strong>pierde</strong> electrones, sobran protones y queda <strong>positivo</strong>: el cobre sin su electrón de valencia es <strong>Cu⁺</strong>. Si <strong>gana</strong> electrones, queda <strong>negativo</strong>: el oxígeno que atrapa 2 es <strong>O²⁻</strong>.</p>
+        <p>La sal de mesa, por ejemplo, está hecha de iones Na⁺ y Cl⁻. Y en un metal, todos los átomos son iones + rodeados de los electrones que soltaron. Eso lo vas a ver en la lección 3.</p>
+        <p class="warn"><b>Ojo:</b> el dibujo de órbitas como planetas (modelo de Bohr) es una simplificación. En realidad los electrones forman “nubes” alrededor del núcleo. Para entender la conducción, este modelo alcanza.</p>
+      </div>
+    </div>
+    <div class="next"><button class="btn" type="button" data-go="inicio">← Inicio</button><button class="btn primary" type="button" data-go="tabla">Siguiente: La tabla periódica →</button></div>
+  </section>
+
+  <!-- ============ LECCIÓN 2: TABLA ============ -->
+  <section class="panel" id="tabla" role="tabpanel" aria-labelledby="t-tabla" hidden>
+    <header class="lhead">
+      <div class="eyebrow">Lección 2 · La tabla periódica</div>
+      <h2>Un mapa de quién conduce y quién no</h2>
+      <p class="lead">La tabla periódica no es una lista para memorizar: está ordenada según los electrones de cada átomo. Por eso, <strong>solo con ver dónde está un elemento</strong>, podés adivinar si conduce la electricidad.</p>
+    </header>
+    <div class="lab">
+      <div class="stage" id="stage-tabla">
+        <div class="otitle"><div class="nm" id="pt-mode-lbl">Color = comportamiento eléctrico</div></div>
+        <div class="legend">
+          <span><i class="dot sq" style="background:var(--cu)"></i>Metales · conductores</span>
+          <span><i class="dot sq" style="background:var(--semi)"></i>Metaloides · semiconductores</span>
+          <span><i class="dot sq" style="background:var(--ais)"></i>No metales · aislantes</span>
+          <span><i class="dot sq" style="background:var(--gas)"></i>Gases nobles · aislantes</span>
+        </div>
+        <div class="hint">Tocá un elemento para ver sus datos · arrastrá para girar</div>
+      </div>
+      <aside class="side">
+        <div class="tour" id="tour-tabla"></div>
+        <div class="dock">
+          <div>
+            <div class="group-label">Qué mostrar</div>
+            <div class="seg" id="pt-modes">
+              <button type="button" data-mode="tipo">Tipo</button>
+              <button type="button" data-mode="valencia">Electrones de valencia</button>
+              <button type="button" data-mode="conductor">Conductores</button>
+              <button type="button" data-mode="semi">Semiconductores</button>
+              <button type="button" data-mode="aislante">Aislantes</button>
+              <button type="button" data-mode="conductividad">Conductividad real</button>
+            </div>
+          </div>
+          <div class="slider"><label for="pt-select">Buscar un elemento</label>
+            <select id="pt-select" style="width:100%;background:var(--bg2);color:var(--text);border:1px solid var(--line2);border-radius:10px;padding:9px 10px;font:15px var(--body)"></select></div>
+          <div class="info" id="pt-info"></div>
+        </div>
+      </aside>
+    </div>
+
+    <div class="theory">
+      <div class="theory-head"><h3>Para entenderlo a fondo</h3><span>Leelo después del recorrido</span></div>
+      <div class="blk">
+        <h4>Cómo está ordenada</h4>
+        <p>Los elementos van en orden de <strong>número atómico</strong> (cantidad de protones): hidrógeno 1, helio 2, litio 3… hasta el oganesón, 118.</p>
+        <ul class="rules">
+          <li><span class="n">filas</span><span>Se llaman <strong>períodos</strong>. El número de fila = la cantidad de <strong>capas</strong> de electrones.</span></li>
+          <li><span class="n">columnas</span><span>Se llaman <strong>grupos</strong>. Los de una misma columna tienen la <strong>última capa parecida</strong> y se comportan parecido.</span></li>
+        </ul>
+        <p>Las dos filas separadas de abajo (lantánidos y actínidos) en realidad van dentro de las filas 6 y 7; se dibujan aparte para que la tabla no quede larguísima.</p>
+      </div>
+      <div class="blk">
+        <h4>Las zonas de la tabla</h4>
+        <ul class="rules">
+          <li><span class="n" style="color:var(--cu)"><span class="n-metales">—</span></span><span><strong>Metales</strong>, a la izquierda y en el centro. Todos conducen.</span></li>
+          <li><span class="n" style="color:var(--semi)">7</span><span><strong>Metaloides</strong>, en una escalera entre ambas zonas. Semiconductores.</span></li>
+          <li><span class="n" style="color:var(--ais)">11</span><span><strong>No metales</strong>, arriba a la derecha. Aislantes (excepto el carbono como grafito).</span></li>
+          <li><span class="n" style="color:var(--gas)">7</span><span><strong>Gases nobles</strong>, última columna. Capa completa: aislantes.</span></li>
+        </ul>
+        <p>De los 118 elementos, unos 94 existen en la naturaleza; el resto se fabricó en laboratorios.</p>
+      </div>
+      <div class="blk">
+        <h4>¿Por qué los metales conducen?</h4>
+        <p>Los metales tienen <strong>pocos electrones de valencia</strong> (1, 2 o 3) y, en general, átomos grandes: esos electrones están lejos del núcleo y bien “tapados” por los internos.</p>
+        <p>Cuando se juntan millones de átomos de metal, esos electrones dejan de pertenecer a un átomo en particular y quedan <strong>compartidos por todos</strong>. Esa forma de unirse se llama <strong>enlace metálico</strong>, y es la razón por la que conducen.</p>
+      </div>
+      <div class="blk">
+        <h4>El grupo 11: cobre, plata y oro</h4>
+        <p>Los tres mejores conductores están <strong>uno debajo del otro</strong>, en la columna 11. Los tres terminan con <strong>un único electrón</strong> en la última capa, muy suelto.</p>
+        <p>Se los llama “metales de acuñación” porque se usaron para hacer monedas. Hoy son los metales de la electrónica: el <strong>cobre</strong> para cables y pistas, la <strong>plata</strong> para contactos y soldaduras, el <strong>oro</strong> para conectores que no se oxidan.</p>
+      </div>
+      <div class="blk">
+        <h4>Un adelanto: cómo se “dopa” el silicio</h4>
+        <p>Las columnas vecinas del silicio (columna 14, 4 electrones) sirven para controlarlo:</p>
+        <ul class="rules">
+          <li><span class="n" style="color:var(--semi)">15</span><span>Con un poco de <strong>fósforo</strong> (5 electrones) sobra un electrón por átomo → silicio <strong>tipo N</strong> (negativo).</span></li>
+          <li><span class="n" style="color:var(--semi)">13</span><span>Con un poco de <strong>boro</strong> (3 electrones) falta uno → queda un hueco → silicio <strong>tipo P</strong> (positivo).</span></li>
+        </ul>
+        <p>Juntando silicio N y P se hacen diodos y transistores. Lo vas a ver en módulos más adelante.</p>
+      </div>
+    </div>
+    <div class="next"><button class="btn" type="button" data-go="atomo">← El átomo</button><button class="btn primary" type="button" data-go="materiales">Siguiente: Conductores y aislantes →</button></div>
+  </section>
+
+  <!-- ============ LECCIÓN 3: MATERIALES ============ -->
+  <section class="panel" id="materiales" role="tabpanel" aria-labelledby="t-materiales" hidden>
+    <header class="lhead">
+      <div class="eyebrow">Lección 3 · Conductores, aislantes y semiconductores</div>
+      <h2>Mar de electrones vs. electrones atados</h2>
+      <p class="lead">Ahora juntamos millones de átomos y miramos el material por dentro. Vas a ver qué pasa con los electrones cuando aplicás un voltaje, y por qué en el cobre avanzan y en la goma no.</p>
+    </header>
+    <div class="lab">
+      <div class="stage" id="stage-mat">
+        <div class="otitle"><div class="sym" id="mat-sym">Cobre</div><div class="nm" id="mat-nm">red metálica</div></div>
+        <div class="legend" id="mat-legend"></div>
+        <div class="hint">Arrastrá para girar · rueda o pellizco para zoom</div>
+      </div>
+      <aside class="side">
+        <div class="tour" id="tour-mat"></div>
+        <div class="dock">
+          <div>
+            <div class="group-label">Explorá: material</div>
+            <div class="chips" id="mat-chips"></div>
+          </div>
+          <div class="slider"><label for="volt">Voltaje aplicado <output id="volt-o" for="volt"></output></label><input type="range" id="volt" min="0" max="100" value="50"></div>
+          <div class="slider"><label for="temp">Temperatura <output id="temp-o" for="temp"></output></label><input type="range" id="temp" min="0" max="100" value="28"></div>
+          <div class="readouts">
+            <div class="ro"><div class="k">Tipo</div><div class="v" id="r-tipo"></div></div>
+            <div class="ro"><div class="k">Resistividad real</div><div class="v" id="r-rho"></div></div>
+            <div class="ro"><div class="k">Electrones libres ahora</div><div class="v" id="r-free"></div></div>
+            <div class="ro"><div class="k">Corriente (100 % = plata al máximo)</div><div class="v" id="r-i">0 %</div><div class="meter"><i id="r-meter"></i></div></div>
+          </div>
+          <div class="info"><p id="mat-note"></p></div>
+        </div>
+      </aside>
+    </div>
+
+    <div class="theory">
+      <div class="theory-head"><h3>Para entenderlo a fondo</h3><span>Leelo después del recorrido</span></div>
+      <div class="blk">
+        <h4>Conductores: el mar de electrones</h4>
+        <p>En un metal, cada átomo suelta sus electrones de valencia. Quedan <strong>iones positivos</strong> ordenados en una red, y alrededor un <strong>“mar” de electrones libres</strong> que no pertenecen a ningún átomo en particular.</p>
+        <p>Esos electrones se mueven todo el tiempo, muy rápido (unos 1.500 km por segundo en el cobre), pero <strong>en direcciones al azar</strong>: chocan, rebotan y cambian de rumbo. Sin voltaje, en promedio no van a ningún lado.</p>
+      </div>
+      <div class="blk">
+        <h4>¿Qué es entonces la corriente?</h4>
+        <p>Cuando conectás una pila, el voltaje empuja a los electrones hacia el polo <strong style="color:var(--plus)">+</strong>. Siguen zigzagueando, pero ahora con una <strong>tendencia</strong>: avanzan un poquito en cada zigzag.</p>
+        <div class="formula">corriente = cuánta carga pasa por un punto en cada segundo</div>
+        <p>Se mide en <strong>amperes (A)</strong>. Una corriente de 1 A equivale a unos <strong>6,24 trillones</strong> de electrones pasando por segundo. Lo vas a usar mucho en la ley de Ohm.</p>
+      </div>
+      <div class="blk">
+        <h4>Rápido y lento a la vez</h4>
+        <div class="fact"><div class="k">Dato que sorprende</div><div class="big">0,07 mm por segundo</div><p>Es lo que avanzan en promedio los electrones en un cable de cobre de 1 mm² con 1 A. Tardarían más de 3 horas en recorrer un metro.</p></div>
+        <div class="analogy"><b>Entonces, ¿por qué la luz se prende al instante?</b>Porque el cable <strong>ya está lleno</strong> de electrones. Es como una manguera llena de agua: abrís la canilla y el agua sale del otro extremo enseguida, aunque cada gota se mueva despacio. Lo que viaja rapidísimo es el empujón.</div>
+      </div>
+      <div class="blk">
+        <h4>Aislantes: electrones ocupados</h4>
+        <p>En la goma, el plástico, el vidrio o la madera seca, los átomos se unen <strong>compartiendo electrones</strong> de a pares (enlace covalente) o atrapándolos con fuerza, como hace el oxígeno. Esos electrones están “ocupados” sosteniendo la unión.</p>
+        <p>Con voltaje se corren un poquito (<strong>polarización</strong>), pero no se pueden ir. Sin electrones libres, <strong>no hay corriente</strong>. Ojo: tienen tantísimos electrones como un metal; lo que les falta son electrones <em>libres</em>.</p>
+        <p>Si el voltaje es enorme, hasta un aislante termina cediendo: se llama <strong>ruptura dieléctrica</strong>. Un rayo es eso mismo, pero en el aire.</p>
+      </div>
+      <div class="blk">
+        <h4>Semiconductores: los intermedios</h4>
+        <p>El silicio tiene sus 4 electrones en enlaces, igual que un aislante, pero <strong>menos sujetos</strong>. Con un poco de energía (calor, luz), algunos se sueltan.</p>
+        <p>Cada electrón que se va deja un <strong>hueco</strong>: un faltante en el enlace. Un electrón vecino puede saltar a ese lugar, y así el hueco se “mueve”. Se comporta como una <strong>carga positiva</strong> que también conduce.</p>
+      </div>
+      <div class="blk">
+        <h4>El calor tiene efectos opuestos</h4>
+        <ul class="rules">
+          <li><span class="n" style="color:var(--cu)">metal</span><span>Más temperatura → los iones vibran más → <strong>más choques</strong> → <strong>más resistencia</strong>.</span></li>
+          <li><span class="n" style="color:var(--semi)">semi</span><span>Más temperatura → se liberan más electrones → <strong>más portadores</strong> → <strong>menos resistencia</strong>.</span></li>
+        </ul>
+        <p>Por eso existen sensores de temperatura de los dos tipos: los <strong>termistores</strong> (semiconductores) y las <strong>sondas de platino</strong> (metal).</p>
+      </div>
+    </div>
+    <div class="next"><button class="btn" type="button" data-go="tabla">← La tabla periódica</button><button class="btn primary" type="button" data-go="bandas">Siguiente: Bandas de energía →</button></div>
+  </section>
+
+  <!-- ============ LECCIÓN 4: BANDAS ============ -->
+  <section class="panel" id="bandas" role="tabpanel" aria-labelledby="t-bandas" hidden>
+    <header class="lhead">
+      <div class="eyebrow">Lección 4 · Bandas de energía</div>
+      <h2>La brecha que hay que saltar</h2>
+      <p class="lead">Es la misma historia de la lección 3, contada con energías. Este modelo es el que usan los ingenieros para explicar los diodos, los LEDs y los paneles solares, así que vale la pena entenderlo desde ahora.</p>
+    </header>
+    <div class="lab">
+      <div class="stage" id="stage-bandas">
+        <div class="legend">
+          <span><i class="dot" style="background:var(--e)"></i>Electrón en un enlace</span>
+          <span><i class="dot" style="background:var(--val)"></i>Electrón libre</span>
+          <span><i class="dot ring"></i>Hueco que deja</span>
+        </div>
+        <div class="hint">Arrastrá para girar · rueda o pellizco para zoom</div>
+      </div>
+      <aside class="side">
+        <div class="tour" id="tour-bandas"></div>
+        <div class="dock">
+          <div class="slider"><label for="temp-b">Temperatura <output id="temp-b-o" for="temp-b"></output></label><input type="range" id="temp-b" min="0" max="100" value="28"></div>
+          <div class="row"><button class="btn small" type="button" id="btn-luz">Iluminar el silicio</button></div>
+          <div class="readouts">
+            <div class="ro wide"><div class="k">Conductor · electrones libres</div><div class="v" id="b-c0" style="color:var(--cu)"></div></div>
+            <div class="ro wide"><div class="k">Semiconductor · electrones libres</div><div class="v" id="b-c1" style="color:var(--semi)"></div></div>
+            <div class="ro wide"><div class="k">Aislante · electrones libres</div><div class="v" id="b-c2" style="color:var(--ais)"></div></div>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <div class="theory">
+      <div class="theory-head"><h3>Para entenderlo a fondo</h3><span>Leelo después del recorrido</span></div>
+      <div class="blk">
+        <h4>De niveles a bandas</h4>
+        <p>En un átomo solo, cada electrón tiene una energía fija, como si estuviera en un escalón. Cuando se juntan miles de millones de átomos en un sólido, esos escalones se <strong>amontonan</strong> tan juntos que forman franjas continuas: las <strong>bandas</strong>.</p>
+        <div class="analogy"><b>Imaginalo así</b>Un edificio de dos pisos. En la planta baja (<strong>valencia</strong>) todos los lugares están ocupados y nadie se puede mover. El primer piso (<strong>conducción</strong>) está vacío y ahí sí se puede circular. Para conducir, hay que subir la escalera.</div>
+      </div>
+      <div class="blk">
+        <h4>La brecha de cada material</h4>
+        <p>La altura de esa “escalera” es la <strong>brecha prohibida</strong>. Valores reales:</p>
+        <ul class="rules">
+          <li><span class="n" style="color:var(--cu)">0 eV</span><span>Cobre, plata, oro: las bandas se superponen.</span></li>
+          <li><span class="n" style="color:var(--semi)">0,67</span><span>Germanio.</span></li>
+          <li><span class="n" style="color:var(--semi)">1,12</span><span>Silicio.</span></li>
+          <li><span class="n" style="color:var(--semi)">3,4</span><span>Nitruro de galio (LEDs azules y cargadores rápidos).</span></li>
+          <li><span class="n" style="color:var(--ais)">5,5</span><span>Diamante.</span></li>
+          <li><span class="n" style="color:var(--ais)">≈ 9</span><span>Vidrio (dióxido de silicio).</span></li>
+        </ul>
+      </div>
+      <div class="blk">
+        <h4>¿Qué es un electronvoltio (eV)?</h4>
+        <p>Es una unidad de energía pensada para electrones: la energía que gana <strong>un electrón al atravesar 1 voltio</strong>.</p>
+        <p>Por ejemplo, una pila AA de 1,5 V le da 1,5 eV a cada electrón que pasa por ella. Más que la brecha del silicio, pero muy lejos de los 9 eV del vidrio.</p>
+      </div>
+      <div class="blk">
+        <h4>Luz y bandas: LEDs y paneles solares</h4>
+        <p>Un <strong>panel solar</strong> usa la luz para hacer saltar electrones a la banda de conducción. Un <strong>LED</strong> hace lo contrario: cuando un electrón baja de la banda de conducción a un hueco, suelta su energía como <strong>luz</strong>.</p>
+        <p>El <strong>color</strong> de un LED depende de la brecha de su material: brecha chica → luz roja; brecha grande → luz azul. Por eso los LEDs azules necesitaron nitruro de galio (3,4 eV) y tardaron décadas en inventarse.</p>
+      </div>
+      <div class="blk">
+        <h4>Dos modelos, una misma idea</h4>
+        <p>“Mar de electrones” y “bandas” no se contradicen: son dos maneras de contar lo mismo.</p>
+        <ul>
+          <li>Electrón en un enlace = electrón en la <strong>banda de valencia</strong>.</li>
+          <li>Electrón libre = electrón en la <strong>banda de conducción</strong>.</li>
+          <li>Soltarse del enlace = <strong>saltar la brecha</strong>.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="next"><button class="btn" type="button" data-go="materiales">← Conductores y aislantes</button><button class="btn primary" type="button" data-go="vida">Siguiente: En la vida real →</button></div>
+  </section>
+
+  <!-- ============ LECCIÓN 5: VIDA REAL ============ -->
+  <section class="panel" id="vida" role="tabpanel" aria-labelledby="t-vida" hidden>
+    <header class="lhead">
+      <div class="eyebrow">Lección 5 · En la vida real · Resistividad ρ en Ω·m</div>
+      <h2>Veinte ceros de diferencia</h2>
+      <p class="lead">La <strong>resistividad</strong> mide cuánto se opone un material al paso de la corriente. <strong>Barra corta = conduce bien.</strong> La escala es logarítmica: entre cada marca, el valor se multiplica por 10.000. Tocá un material marcado con “ver 3D” para verlo por dentro.</p>
+    </header>
+    <div class="chart"><div class="chart-inner" id="chart"></div></div>
+    <div class="grid3" style="margin-top:14px">
+      <div class="fact"><div class="k">Plata contra goma</div><div class="big" id="ratio">más de 10²⁰ veces</div><p>Esa es la diferencia de resistividad entre el mejor conductor y un aislante común. No hay otra propiedad física que varíe tanto entre materiales.</p></div>
+      <div class="fact"><div class="k">¿Por qué cobre y no plata?</div><div class="big">Precio</div><p>La plata conduce apenas un 6 % mejor, pero cuesta muchísimo más. El cobre es el equilibrio ideal entre conducción, precio y facilidad para trabajarlo.</p></div>
+      <div class="fact"><div class="k">¿Y el oro?</div><div class="big">No se oxida</div><p>Conduce peor que el cobre, pero su superficie se mantiene limpia por décadas. Por eso cubre contactos de conectores, tarjetas SIM y placas.</p></div>
+    </div>
+
+    <h3 class="sec-title">Dónde está cada uno</h3>
+    <p class="sec-sub">Casi cualquier aparato electrónico combina los tres tipos de material. Cada uno cumple un rol.</p>
+    <div class="uses" id="usos"></div>
+
+    <h3 class="sec-title">Errores comunes</h3>
+    <p class="sec-sub">Ideas que suenan lógicas pero no son así. Si entendiste las lecciones, ya sabés por qué.</p>
+    <div class="myths" id="mitos"></div>
+
+    <div class="warn" style="margin-top:22px"><b>Seguridad.</b> Tu cuerpo conduce: tiene agua con sales disueltas, es decir, iones libres. Por eso la electricidad de la red de tu casa es peligrosa. Nunca trabajes en la instalación eléctrica sin la formación y la protección adecuadas.</div>
+    <div class="next"><button class="btn" type="button" data-go="bandas">← Bandas de energía</button><button class="btn primary" type="button" data-go="resumen">Siguiente: Resumen y glosario →</button></div>
+  </section>
+
+  <!-- ============ RESUMEN ============ -->
+  <section class="panel" id="resumen" role="tabpanel" aria-labelledby="t-resumen" hidden>
+    <header class="lhead">
+      <div class="eyebrow">Resumen del módulo 1</div>
+      <h2>Lo esencial, en once ideas</h2>
+      <p class="lead">Si podés explicar cada una de estas ideas con tus palabras, entendiste el módulo. Si alguna no te cierra, volvé a su lección.</p>
+    </header>
+    <ol class="ideas" id="ideas"></ol>
+
+    <h3 class="sec-title">Glosario</h3>
+    <div class="gloss-tools"><label for="gloss-q" class="group-label" style="margin:0">Buscar</label><input type="search" id="gloss-q" placeholder="Ej.: hueco, ion, valencia…"><span id="gloss-n" style="color:var(--muted);font-size:13.5px"></span></div>
+    <dl class="gloss" id="glosario"></dl>
+    <div class="next"><button class="btn" type="button" data-go="vida">← En la vida real</button><button class="btn primary" type="button" data-go="prueba">Ir a la autoevaluación →</button></div>
+  </section>
+
+  <!-- ============ AUTOEVALUACIÓN ============ -->
+  <section class="panel" id="prueba" role="tabpanel" aria-labelledby="t-prueba" hidden>
+    <header class="lhead">
+      <div class="eyebrow">Autoevaluación · Módulo 1</div>
+      <h2>¿Lo entendiste? Probalo</h2>
+      <p class="lead">Catorce preguntas, en el orden de las lecciones. Cada respuesta trae la explicación; si fallás una, tenés un enlace directo para repasar esa lección.</p>
+    </header>
+    <div class="quiz" id="quiz"></div>
+  </section>
+  </main>
+
+  <footer class="foot">
+    <span>Taller de Electrones · Módulo 1: La materia y la electricidad</span>
+    <span>Valores de resistividad y conductividad aproximados, a 20 °C. Las escenas 3D son modelos simplificados: las proporciones reales no se pueden dibujar a escala.</span>
+  </footer>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script src="js/datos.js"></script>
+<script src="js/motor3d.js"></script>
+<script src="js/escena-viaje.js"></script>
+<script src="js/escena-atomo.js"></script>
+<script src="js/escena-tabla.js"></script>
+<script src="js/escena-materiales.js"></script>
+<script src="js/escena-bandas.js"></script>
+<script src="js/app.js"></script>
+<!--/ARTIFACT-BODY-->
+</body>
+</html>
